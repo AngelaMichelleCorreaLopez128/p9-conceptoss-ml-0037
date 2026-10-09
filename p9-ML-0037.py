@@ -29,9 +29,51 @@ print(X.head(2))
 
 print("\n--- VARIABLE OBJETIVO (TARGET - y) ---")
 print(y.head(2))
+print("+-++++-+-+-+-+-+")
+print("3. Reto de Aprendizaje Basado en Problemas (ABP)")
+print("+-++++-+-+-+-+-+")
+
+import pandas as pd
+
+# Crear el dataset de pacientes
+datos = {
+    "id_paciente": [101, 102, 103, 104, 105],
+    "edad": [25, 45, 36, 52, 29],
+    "nivel_glucosa": [90, 160, 110, 180, 95],
+    "presion_arterial": [115, 140, 120, 150, 110],
+    "indice_masa_corporal": [22.5, 31.2, 27.0, 34.5, 24.0],
+    "diagnostico_diabetes": [0, 1, 0, 1, 0]
+}
+
+df = pd.DataFrame(datos)
+
+# Mostrar el dataset completo
+print("DATASET COMPLETO:")
+print(df)
+
+# Eliminar la columna que no aporta información útil
+df = df.drop(columns=["id_paciente"])
+
+# Identificar el Target (y)
+y = df["diagnostico_diabetes"]
+
+# Identificar las Features (X)
+X = df.drop(columns=["diagnostico_diabetes"])
+
+# Mostrar los resultados
+print("\nFEATURES (X):")
+print(X)
+
+print("\nTARGET (y):")
+print(y)
+
+print("\nCOLUMNAS ELIMINADAS:")
+print("id_paciente")
+
+print("\nPROGRAMA EJECUTADO CORRECTAMENTE")
 
 print("+-++++-+-+-+-+-+")
-print("# 14.")
+print("# Problema 14.")
 import pandas as pd
 
 datos14 = {
